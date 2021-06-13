@@ -6,7 +6,6 @@
 const Uint8* keys = SDL_GetKeyboardState(NULL);
 
 int bored[50][50];
-int newbored[50][50];
 
 
 int ce[1000];
@@ -31,7 +30,7 @@ int main(int argc, char** argv)
 	SDL_Event event;
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_Window* window = SDL_CreateWindow("RandBow",
-		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 950, 950, 0);
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1000, 1000, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
@@ -61,9 +60,9 @@ int main(int argc, char** argv)
 
 			SDL_GetMouseState(&mousx, &mousy);
 			if(keys[SDL_SCANCODE_Q] && !onset){
-				for (int y = 0; y < 19; ++y)
+				for (int y = 0; y < 20; ++y)
 				{
-					for (int x = 0; x < 19; ++x)
+					for (int x = 0; x < 20; ++x)
 					{
 						switch (bored[x][y]){
 							case 1:
@@ -104,6 +103,9 @@ int main(int argc, char** argv)
 						}
 					}
 				}
+				memset(ce, 0, sizeof(ce)); // for automatically-allocated arrays
+				memset(ce, 0, 1000*sizeof(*ce)); // for heap-allocated arrays, where N is the number of elements
+
 				cout << "\n\n----------------\ndone\n----------------\n\n";
 				onset = true;
 			}else if (!keys[SDL_SCANCODE_Q])
