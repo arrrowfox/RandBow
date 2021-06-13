@@ -32,3 +32,25 @@ Light Brown = Moves to the next cell.<br />
 
 Use "Q" to run the program.<br />
 Use "W" and "E" to cycle through the colors<br />
+
+## Examples
+### "HELLO" Program("Hello World!" Would take to long)
+![image](https://user-images.githubusercontent.com/85812992/121818727-87099680-cc4e-11eb-9443-998c6ab6084e.png)
+1. Gets Cell 1 to "A"
+2. Copys that into Cell 2
+3. Gets Cell 1 to "H"
+4. Prints "H"
+5. Moves to Cell 2
+6. Gets Cell 2 to "E" from "A"
+7. Prints "E"
+8. Copys "E" from Cell 2 to Cell 3
+9. Moves to Cell 3
+10. Gets Cell 3 up to "L"
+11. Prints "L"
+12. Copys Cell 3 to Cell 4
+14. Prints Cell 3
+15. Copys Cell 3 to Cell 4(redundancy is fun)
+16. Moves to Cell 4
+17. Bosts Cell 4 to "O"
+18. Prints Cell 4<br />
+Output: `HELLO`
