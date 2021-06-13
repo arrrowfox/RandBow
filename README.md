@@ -27,3 +27,8 @@ Purple = Waits for you to type an charicter and a newline and puts into curent c
 White = Copys current cell into next cell.<br />
 Dark Brown = Moves to the last cell.<br />
 Light Brown = Moves to the next cell.<br />
+
+### How Control The Program
+
+Use "Q" to run the program.<br />
+Use "W" and "E" to cycle through the colors<br />
