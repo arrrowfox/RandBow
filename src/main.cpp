@@ -27,6 +27,8 @@ int main(int argc, char** argv)
 	
 	bool quit = false;
 
+	ofstream dave;
+
 	SDL_Event event;
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_Window* window = SDL_CreateWindow("RandBow",
@@ -60,6 +62,49 @@ int main(int argc, char** argv)
 
 			SDL_GetMouseState(&mousx, &mousy);
 			if(keys[SDL_SCANCODE_Q] && !onset){
+
+				dave.open ((argc == 2) ? argv[1] : "main.rd", std::ofstream::trunc);//open file
+				for (int y = 0; y < 20; ++y)
+				{
+					for (int x = 0; x < 20; ++x)
+					{
+						switch (bored[x][y]){
+							case 1:
+								dave << "r";
+								break;
+							case 2:
+								dave << "b";
+								break;
+							case 3:
+								dave << "y";
+								break;
+							case 4:
+								dave << "o";
+								break;
+							case 5:
+								dave << "g";
+								break;
+							case 6:
+								dave << "p";
+								break;
+							case 7:
+								dave << "w";
+								break;
+							case 8:
+								dave << "d";
+								break;
+							case 9:
+								dave << "l";
+								break;
+							case 0:
+								dave << "n";
+								break;
+
+						}
+					}
+				}
+
+				dave.close();
 				for (int y = 0; y < 20; ++y)
 				{
 					for (int x = 0; x < 20; ++x)
@@ -72,12 +117,22 @@ int main(int argc, char** argv)
 								ce[cepo]--;
 								break;
 							case 3:
+								cout << ce[cepo];
+								cout << x << ", ";
+								cout << y << "\n";
 								x += ce[cepo];
 								while (x>19)
 								{
 									x -= 19;
 									y++;
 								}
+								while (x<0)
+								{
+									x += 19;
+									y--;
+								}
+								cout << x << ", ";
+								cout << y << "\n";
 								break;
 							case 4:
 								cout << char(ce[cepo]);
@@ -89,6 +144,8 @@ int main(int argc, char** argv)
 								char buf;
 								scanf ("%c",&buf);
 								getchar();
+								cin.clear();
+
 								ce[cepo]=buf;
 								break;
 							case 7:

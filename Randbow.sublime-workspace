@@ -41,7 +41,7 @@
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -112,7 +112,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Build Debug",
+	"pinned_build_system": "Build Release",
 	"replace":
 	{
 		"height": 58.0
